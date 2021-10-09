@@ -1,0 +1,27 @@
+I have chosen a number between 1 and 100.
+Can you guess it?
+Enter your guess: 23
+Too high, try again
+Enter your guess: 54
+Too high, try again
+Enter your guess: 23
+Too high, try again
+Enter your guess: 6
+Too low, try again
+Enter your guess: 89
+Too high, try again
+Enter your guess: 56
+Too high, try again
+Enter your guess: 45
+Too high, try again
+Enter your guess: 33
+Too high, try again
+Enter your guess: 21
+Too high, try again
+Enter your guess: 89
+You lost the game!
+
+Want to try again ? Yes No
+Response: No
+Thanks for playing the game.
+Hope to see you again.
