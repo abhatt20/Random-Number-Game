@@ -1,0 +1,109 @@
+# Date: 6/30/20
+# Author: Aryan Bhatt
+# Program Description: This program generates
+# a random number in the range of 1 through 100
+# and asks the user to guess what the number is.
+
+# Import the random module.
+import random
+
+# Import the system module.
+import sys
+
+
+def main():
+
+        # Display the title of the program.
+        print("I have chosen a number between 1 and 100.")
+        print("Can you guess it?")
+        
+        count_guesses = 0 # Counter variable
+        
+        
+        # Call the randint function from the random module.
+        random_number = random.randint(1,100) # Stores a generated random number in the range 1-100.
+
+        # Call the get_guess function.
+        user_guess = get_guess() # Stores the value returned from get_guess function.
+    
+        
+        # Use a while loop to check the user's guess against the generated random number.
+        while count_guesses != 9:
+
+                                                                                                                       
+                        
+                       # Display a message if the user enters a number smaller than the chosen number.
+                       if user_guess < random_number:
+                           print("Too low, try again")
+                           count_guesses += 1 # Increment by 1.
+                           
+                       # Display a message if the user enters a number larger than the chosen number.
+                       elif (user_guess > random_number) and (user_guess <= 100):
+                           print("Too high, try again")
+                           count_guesses += 1 # Increase the counter variable by 1.
+                          
+                        
+                       # Call the get_guess function to accept another guess from the user.
+                       user_guess = get_guess()
+                       
+
+                       # Use a nested if to display the correct message based on the number of guesses.
+                       if user_guess == random_number:
+
+                          # Display the respective message if the number of guesses is 1.
+                          if count_guesses == 1:
+                             count_guesses += 1
+                             print("Correct!! and it only took you",count_guesses,"guess.",sep=' ')
+                             print("Congratulations on beating the game.",sep=' ')
+
+                          # Display the respective message if the number of guesses is more than 1.
+                          else:
+                            count_guesses += 1
+                            print("Correct!! and it only took you",count_guesses,"guesses.",sep=' ')
+                            print("Congratulations on beating the game.",sep=' ')
+                            sys.exit()
+                            
+
+        # Give the user another chance to play the game in the event they lose.
+        print("You lost the game!",sep=' ')
+        print("\nWant to try again ? Yes No",sep=' ')
+        response = input("Response: ")
+        
+
+        # Use an if-else construct to either the start the game again or exit from it.
+        if response == "Yes":
+                        print("\n")
+                        main()
+
+        else:
+                print("Thanks for playing the game.",sep=' ')
+                print("Hope to see you again.",sep=' ')
+                sys.exit()
+
+             
+# This function returns the number guessed by the user.
+def get_guess():
+        """Accept the guesses from the user and check whether the guess is valid or not."""
+                
+        valid = True # Initialize the loop-control variable.
+
+
+        # Use a while loop to get another guess in case the user's guess is not in the range 1-100. 
+        while valid == True:
+               
+                    # Accept the user's input.
+                    guessed_number = int(input("Enter your guess: "))
+
+                    # Display an error message if the user enters a number outside the range of 1-100.
+                    if (guessed_number < 1) or (guessed_number > 100):
+                        print("Your guess must be between 1 and 100. Try again.")
+                        
+                    # Exit out of the while loop.
+                    else:
+                        valid = False # Update the loop-control variable.
+                        return guessed_number # Return the user's guess back to the main function.
+
+
+# Call the main function.
+main()
+
