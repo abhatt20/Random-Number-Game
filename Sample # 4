@@ -1,0 +1,17 @@
+I have chosen a number between 1 and 100.
+Can you guess it?
+Enter your guess: 34
+Too low, try again
+Enter your guess: 65
+Too high, try again
+Enter your guess: 60
+Too low, try again
+Enter your guess: 64
+Too high, try again
+Enter your guess: 63
+Too high, try again
+Enter your guess: 62
+Too high, try again
+Enter your guess: 61
+Correct!! and it only took you 7 guesses.
+Congratulations on beating the game.
